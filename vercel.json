@@ -1,14 +1,9 @@
 {
   "builds": [
-    {
-      "src": "api/index.py",
-      "use": "@vercel/python"
-    }
+    { "src": "Revv/wsgi.py", "use": "@vercel/python" },
+    { "src": "manage.py", "use": "@vercel/static-build", "config": { "distDir": "staticfiles" } }
   ],
   "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "api/index.py"
-    }
+    { "src": "/(.*)", "dest": "Revv/wsgi.py" }
   ]
 }
